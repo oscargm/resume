@@ -1,174 +1,223 @@
 * {
-    box-sizing: border-box;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 1rem;
+	box-sizing: border-box;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1rem;
 }
 
 html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 #container {
-    margin: 0 auto;
-    width: 80%;
-    padding: 0 3rem;
-    height: 100%;
+	margin: 0 auto;
+	width: 80%;
+	padding: 0 3rem;
+	height: 100%;
 }
 
 h1 {
-    font-size: 2rem;
+	font-size: 2rem;
 }
 
 h2 {
-    font-size: 1.5rem;
+	font-size: 1.5rem;
+}
+
+.job-wrapper {
+	perspective: 600px;
+	height: auto;
+	min-height: 200px;
+	position: relative;
 }
 
 .job {
-    position: relative;
-    padding: 1rem;
-    display: flex;
-    border: 3px outset black;
-    flex-direction: column;
+	backface-visibility: hidden;
+	opacity: 1;
+	width: 100%;
+	transform-style: preserve-3d;
+	transform-origin: center right;
+	transition: transform 1s;
+	height: inherit;
+}
+
+.job.is-flipped {
+	transform: translateX(-100%) rotateY(-180deg);
+}
+
+.job-front,
+.job-reverse {
+	width: 100%;
+	padding: 1rem;
+	border: 3px outset black;
+	text-align: center;
+	backface-visibility: hidden;
+	position: absolute;
+}
+
+.job-reverse {
+	transform: rotateY(180deg);
 }
 
 .job-title {
-    border-bottom: 1px dashed black;
+	border-bottom: 1px dashed black;
 }
 
 .job-title h2 {
-    margin: 0.5rem 0;
+	margin: 0.5rem 0;
 }
 
 .job-details {
-    display: flex;
+	display: flex;
+	flex-direction: initial;
 }
 
 .job-dates {
-    flex-grow: 2;
-    flex-basis: 3rem;
-    align-self: center;
-    text-align: center;
-    padding: 0 2rem;
-    font-size: 0.8rem;
-    /* border: 1px solid black; */
+	flex-grow: 2;
+	flex-basis: 3rem;
+	align-self: center;
+	text-align: center;
+	padding: 0 2rem;
+	font-size: 0.8rem;
+	/* border: 1px solid black; */
 }
 
 .job h2 {
-    font-size: 1rem;
-    text-align: center;
+	font-size: 1rem;
+	text-align: center;
 }
 
 .job-duties {
-    flex-basis: 7rem;
-    flex-grow: 9;
-    align-self: center;
-    text-align: center;
+	flex-basis: 7rem;
+	flex-grow: 9;
+	align-self: center;
+	text-align: center;
 }
 
 .company-logo {
-    flex-grow: 1;
-    flex-basis: 3rem;
-    height: 7rem;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+	flex-grow: 1;
+	flex-basis: 3rem;
+	height: 7rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .open-details-button {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    font-size: 0.75rem;
-    background: transparent;
-    border: 1px outset black;
-    padding: 0.25rem;
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	font-size: 0.75rem;
+	background: transparent;
+	border: 1px outset black;
+	padding: 0.25rem;
+	cursor: pointer;
+}
+
+.dev-tasks,
+.scrum-tasks {
+	width: 50%;
+	height: 100%;
+}
+
+.dev-tasks ul,
+.scrum-tasks ul {
+	list-style-type: none;
+	text-align: left;
+}
+
+.dev-tasks {
+	background-color: cadetblue;
+}
+
+.scrum-tasks {
+	background-color: coral;
 }
 
 #roche {
-    background-image: url("../img/companies/roche.png");
+	background-image: url("../img/companies/roche.png");
 }
 
 #carver {
-    background-image: url("../img/companies/carver.png");
+	background-image: url("../img/companies/carver.png");
 }
 
 #sbc {
-    background-image: url("../img/companies/sbc.png");
+	background-image: url("../img/companies/sbc.png");
 }
 
 .tech-stack {
-    text-align: center;
+	text-align: center;
 }
 
 .tech-stack ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
 }
 
 .tech-stack ul li {
-    display: inline-block;
-    padding: 0 0.5rem;
+	display: inline-block;
+	padding: 0 0.5rem;
 }
 
 .lang-list-icon {
-    height: 1.5rem;
-    width: 1.5rem;
-    background-size: contain;
-    background-repeat: no-repeat;
+	height: 1.5rem;
+	width: 1.5rem;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .intersystems {
-    background-image: url("../img/intersystems-list-icon.png");
+	background-image: url("../img/intersystems-list-icon.png");
 }
 
 .js {
-    background-image: url("../img/js-list-icon.png");
+	background-image: url("../img/js-list-icon.png");
 }
 
 .jquery {
-    background-image: url("../img/jquery-list-icon.png");
+	background-image: url("../img/jquery-list-icon.png");
 }
 
 .reactjs {
-    background-image: url("../img/reactjs-list-icon.png");
+	background-image: url("../img/reactjs-list-icon.png");
 }
 
 .redux {
-    background-image: url("../img/redux-list-icon.png");
+	background-image: url("../img/redux-list-icon.png");
 }
 
 .jest {
-    background-image: url("../img/jest-list-icon.png");
+	background-image: url("../img/jest-list-icon.png");
 }
 
 .java {
-    background-image: url("../img/java-list-icon.png");
+	background-image: url("../img/java-list-icon.png");
 }
 
 .spring-boot {
-    background-image: url("../img/spring-boot-list-icon.png");
+	background-image: url("../img/spring-boot-list-icon.png");
 }
 
 .html5 {
-    background-image: url("../img/html5-list-icon.png");
+	background-image: url("../img/html5-list-icon.png");
 }
 
 .css3 {
-    background-image: url("../img/css3-list-icon.png");
+	background-image: url("../img/css3-list-icon.png");
 }
 
 .php {
-    background-image: url("../img/php-list-icon.png");
+	background-image: url("../img/php-list-icon.png");
 }
 
 .seo {
-    background-image: url("../img/seo-list-icon.png");
+	background-image: url("../img/seo-list-icon.png");
 }
 
 .debian {
-    background-image: url("../img/debian-list-icon.png");
+	background-image: url("../img/debian-list-icon.png");
 }
