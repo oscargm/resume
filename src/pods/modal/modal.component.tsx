@@ -1,33 +1,24 @@
 import * as React from 'react'
-import '../../static/css/modal.scss'
+import '../../static/css/modal.css'
 
 interface Props {
   jobId: string
+  open: boolean
+  setOpenModal: (open) => void
 }
 
 export const Modal = (props: Props) => (
-  <div id={`modal-${props.jobId}`}>
+  <div
+    id={`modal-${props.jobId}`}
+    className={props.open ? 'modal-wrapper is-visible' : 'modal-wrapper'}
+  >
     <div className="modal-background">
       <div className="modal">
         <h2>I'm a Modal</h2>
         <p>Hear me roar.</p>
-        <svg
-          className="modal-svg"
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
-          preserveAspectRatio="none"
-        >
-          <rect
-            x="0"
-            y="0"
-            fill="none"
-            width="226"
-            height="162"
-            rx="3"
-            ry="3"
-          />
-        </svg>
+        <div className="action-buttons">
+          <button onClick={() => props.setOpenModal(false)}>Close</button>
+        </div>
       </div>
     </div>
   </div>

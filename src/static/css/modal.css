@@ -1,0 +1,40 @@
+.modal-wrapper {
+    display: none;
+    z-Index: 100;
+}
+
+.modal-wrapper.is-visible {
+    display: block
+}
+
+.modal-wrapper, .modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-background {
+    background-color: rgba(50, 50, 50, 0.8);
+}
+
+.modal-background, .modal {
+    position: relative;
+    padding: 3rem;
+}
+
+.modal {
+    background-color: white;
+    height: 100%;
+}
+
+.modal h2, .action-buttons {
+    text-align: center;
+}
+
+.action-buttons {
+    position: absolute;
+    width: 100%;
+    bottom: 3rem;
+}

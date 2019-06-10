@@ -47,8 +47,7 @@ h2 {
 	transform: translateX(-100%) rotateY(-180deg);
 }
 
-.job-front,
-.job-reverse {
+.job-front, .job-reverse {
 	width: 100%;
 	padding: 1rem;
 	border: 3px outset black;
@@ -116,14 +115,12 @@ h2 {
 	cursor: pointer;
 }
 
-.dev-tasks,
-.scrum-tasks {
+.dev-tasks, .scrum-tasks {
 	width: 50%;
 	height: 100%;
 }
 
-.dev-tasks ul,
-.scrum-tasks ul {
+.dev-tasks ul, .scrum-tasks ul {
 	list-style-type: none;
 	text-align: left;
 }

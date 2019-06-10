@@ -14,15 +14,11 @@ interface JobProps {
 }
 
 export const Job = (props: JobProps) => {
-  const [detailsVisible, setDetailsVisible] = React.useState(false)
+  const [modalOpen, setModalOpen] = React.useState(false)
   const { jobTitle, jobId, companyName, jobDates, jobDuties, techStack } = props
-
-  const toggleVisibility = (jobId: string) => {
-    let card = document.querySelector(`#job-${jobId}`)
-    card.classList.toggle('is-flipped')
-    setDetailsVisible(!detailsVisible)
-  }
-
+  React.useEffect(() => {
+    console.log(jobId, modalOpen)
+  })
   return (
     <>
       <div className={'job-wrapper'}>
@@ -32,7 +28,7 @@ export const Job = (props: JobProps) => {
               <h2>{jobTitle}</h2>
               <span
                 className={'open-details-button'}
-                onClick={() => toggleVisibility(jobId)}
+                onClick={() => setModalOpen(!modalOpen)}
               >
                 details
               </span>
@@ -48,15 +44,13 @@ export const Job = (props: JobProps) => {
               </div>
               <div className={'job-duties'}>
                 <p>{jobDuties}</p>
-                <div className={'tech-stack'}>
-                  <TechStach stack={techStack} />
-                </div>
+                <TechStach stack={techStack} />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Modal jobId={jobId} />
+      <Modal jobId={jobId} open={modalOpen} setOpenModal={setModalOpen} />
     </>
   )
 }
@@ -65,15 +59,17 @@ interface TechStackProps {
   stack: string[]
 }
 const TechStach = (props: TechStackProps) => (
-  <ul>
-    {props.stack.map(tech => {
-      return (
-        <li key={techList[tech].title}>
-          <a href={techList[tech].url} title={techList[tech].title}>
-            <div className={`lang-list-icon ${techList[tech].className}`} />
-          </a>
-        </li>
-      )
-    })}
-  </ul>
+  <div className={'tech-stack'}>
+    <ul>
+      {props.stack.map(tech => {
+        return (
+          <li key={techList[tech].title}>
+            <a href={techList[tech].url} title={techList[tech].title}>
+              <div className={`lang-list-icon ${techList[tech].className}`} />
+            </a>
+          </li>
+        )
+      })}
+    </ul>
+  </div>
 )
