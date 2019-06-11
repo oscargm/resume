@@ -1,40 +1,61 @@
 .modal-wrapper {
-    display: none;
-    z-Index: 100;
+	opacity: 0;
+	visibility: hidden;
+	z-Index: 100;
+	transition: opacity 0.2s linear, visibility 0s linear 0.15s;
 }
 
 .modal-wrapper.is-visible {
-    display: block
+	transition: opacity 0.2s linear, visibility 0s linear;
+	opacity: 1;
+	visibility: visible;
+	/* display: block; */
+	/* animation: fadeIn;
+    animation-delay: 0.1s;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards; */
 }
 
-.modal-wrapper, .modal-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+.modal-wrapper,
+.modal-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .modal-background {
-    background-color: rgba(50, 50, 50, 0.8);
+	background-color: rgba(50, 50, 50, 0.8);
 }
 
-.modal-background, .modal {
-    position: relative;
-    padding: 3rem;
+.modal-background,
+.modal {
+	position: relative;
+	padding: 3rem;
+	border: outset 3px black;
 }
 
 .modal {
-    background-color: white;
-    height: 100%;
+	background-color: white;
+	height: 100%;
 }
 
-.modal h2, .action-buttons {
-    text-align: center;
+.modal h2,
+.action-buttons {
+	text-align: center;
 }
 
 .action-buttons {
-    position: absolute;
-    width: 100%;
-    bottom: 3rem;
+	position: absolute;
+	width: 100%;
+	bottom: 3rem;
+}
+
+.closeButton {
+	font-size: 0.75rem;
+	background: transparent;
+	border: 1px outset black;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
 }

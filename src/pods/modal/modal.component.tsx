@@ -17,7 +17,12 @@ export const Modal = (props: Props) => (
         <h2>I'm a Modal</h2>
         <p>Hear me roar.</p>
         <div className="action-buttons">
-          <button onClick={() => props.setOpenModal(false)}>Close</button>
+          <button
+            onClick={() => props.setOpenModal(false)}
+            className="closeButton"
+          >
+            Close
+          </button>
         </div>
       </div>
     </div>

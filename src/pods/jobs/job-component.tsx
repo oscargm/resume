@@ -26,12 +26,12 @@ export const Job = (props: JobProps) => {
           <div className={'job-front'}>
             <section className={'job-title'}>
               <h2>{jobTitle}</h2>
-              <span
+              <button
                 className={'open-details-button'}
                 onClick={() => setModalOpen(!modalOpen)}
               >
-                details
-              </span>
+                Details
+              </button>
             </section>
             <div className={'job-details'}>
               <div className={'company-logo'} id={jobId} title={companyName} />
