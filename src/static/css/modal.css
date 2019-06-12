@@ -39,6 +39,7 @@
 .modal {
 	background-color: white;
 	height: 100%;
+	overflow: hidden;
 }
 
 .modal h2,
@@ -62,38 +63,60 @@
 
 .stages {
 	display: flex;
+	height: 100%;
 }
 
-.refinements {
+.refinements,
+.refinements .task-list {
 	background-color: #2fa6ce;
 }
 
-.development {
+.development,
+.development .task-list {
 	background-color: #edd434;
 }
 
-.regression {
+.regression,
+.regression .task-list {
 	background-color: #f26c2e;
+}
+
+.refinements:hover,
+.development:hover,
+.regression:hover {
+	margin: 15px 0 0 15px;
+	-webkit-box-shadow: -15px -15px 5px -8px rgba(0, 0, 0, 0.54);
+	-moz-box-shadow: -15px -15px 5px -8px rgba(0, 0, 0, 0.54);
+	box-shadow: -15px -15px 5px -8px rgba(0, 0, 0, 0.54);
+}
+
+.refinements:hover > .task-list,
+.development:hover > .task-list,
+.regression:hover > .task-list {
+	transition: opacity 0.1s linear, visibility 0s linear;
+	opacity: 1;
+	visibility: visible;
 }
 
 .refinements,
 .development,
 .regression {
 	flex-basis: 33.3%;
-	padding: 1rem;
+	padding: 1rem 0;
 	border: 1px solid black;
 	position: relative;
+	height: 3rem;
 }
 
 .stages h4 {
-	margin-top: 0;
+	margin: 0;
 	text-align: center;
 }
 
 .stages ul {
 	margin: 0;
 	padding: 0;
-	list-style-type: none;
+	list-style-type: ;
 }
 
 .stages li {
@@ -102,10 +125,28 @@
 
 .arrow-right {
 	position: absolute;
-	top: 50%;
+	z-index: 200;
+	top: 0;
+	right: -3rem;
 	width: 0px;
 	height: 0px;
-	border-top: 60px solid transparent;
-	border-bottom: 60px solid transparent;
-	border-left: 60px solid green;
+	border-top: 1.5rem solid transparent;
+	border-bottom: 1.5rem solid transparent;
+}
+
+.refinements > .arrow-right {
+	border-left: 3rem solid #2fa6ce;
+}
+
+.development > .arrow-right {
+	border-left: 3rem solid #edd434;
+}
+
+.task-list {
+	opacity: 0;
+	visibility: hidden;
+	padding: 2rem 1rem;
+	-webkit-box-shadow: -15px 0 5px -8px rgba(0, 0, 0, 0.54);
+	-moz-box-shadow: -15px 0 5px -8px rgba(0, 0, 0, 0.54);
+	box-shadow: -15px 0 5px -8px rgba(0, 0, 0, 0.54);
 }

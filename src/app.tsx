@@ -9,7 +9,6 @@ export const App = () => {
   React.useEffect(() => {
     setJobs(jobList)
   }, [])
-
   return (
     <section id={'container'}>
       <section id={'content'}>

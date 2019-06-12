@@ -25,34 +25,41 @@ export const Modal = (props: Props) => {
           <div className="stages">
             <section className="refinements">
               <h4>Refinements</h4>
-              <ul>
-                <li>Backlog items refinement</li>
-                <li>Analyze business impact</li>
-                <li>Analyze technical debt</li>
-                <li>User stories definition</li>
-                <li>Define features to cover with Acceptance Tests</li>
-                <li>Sprint planning</li>
-              </ul>
-              {/* <div className="arrow-right" /> */}
+              <div className="arrow-right" />
+              <div className="task-list">
+                <ul>
+                  <li>Backlog items refinement</li>
+                  <li>Analyze business impact</li>
+                  <li>Analyze technical debt</li>
+                  <li>User stories definition</li>
+                  <li>Define features to cover with Acceptance Tests</li>
+                  <li>Sprint planning</li>
+                </ul>
+              </div>
             </section>
             <section className="development">
               <h4>Development</h4>
-              <ul>
-                <li>Daily meeting to synchroniza</li>
-                <li>Development of new features</li>
-                <li>Development of tests</li>
-                <li>Refinement of following sprints</li>
-                <li>Track SonarQube issues</li>
-                <li>Pull requests revisions</li>
-              </ul>
+              <div className="arrow-right" />
+              <div className="task-list">
+                <ul>
+                  <li>Daily meeting to synchroniza</li>
+                  <li>Development of new features</li>
+                  <li>Development of tests</li>
+                  <li>Refinement of following sprints</li>
+                  <li>Track SonarQube issues</li>
+                  <li>Pull requests revisions</li>
+                  <li>BugFixing</li>
+                </ul>
+              </div>
             </section>
             <section className="regression">
               <h4>Regression</h4>
-              <ul>
-                <li>Stakeholders Demo</li>
-                <li>Team retrospective</li>
-                <li>BugFixing</li>
-              </ul>
+              <div className="task-list">
+                <ul>
+                  <li>Stakeholders Demo</li>
+                  <li>Team retrospective</li>
+                </ul>
+              </div>
             </section>
           </div>
           <div className="action-buttons">
