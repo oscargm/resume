@@ -81,26 +81,20 @@
 	background-color: #f26c2e;
 }
 
-.refinements:hover,
-.development:hover,
-.regression:hover {
+.stages > section:hover {
 	margin: 15px 0 0 15px;
 	-webkit-box-shadow: -15px -15px 5px -8px rgba(0, 0, 0, 0.54);
 	-moz-box-shadow: -15px -15px 5px -8px rgba(0, 0, 0, 0.54);
 	box-shadow: -15px -15px 5px -8px rgba(0, 0, 0, 0.54);
 }
 
-.refinements:hover > .task-list,
-.development:hover > .task-list,
-.regression:hover > .task-list {
+.stages > section:hover > .task-list {
 	transition: opacity 0.1s linear, visibility 0s linear;
 	opacity: 1;
 	visibility: visible;
 }
 
-.refinements,
-.development,
-.regression {
+.stages > section {
 	flex-basis: 33.3%;
 	padding: 1rem 0;
 	border: 1px solid black;
@@ -109,7 +103,7 @@
 }
 
 .stages h4 {
-	margin: 0;
+	margin: 0 0 1rem 0;
 	text-align: center;
 }
 
@@ -146,6 +140,7 @@
 	opacity: 0;
 	visibility: hidden;
 	padding: 2rem 1rem;
+	border-top: 1px solid black;
 	-webkit-box-shadow: -15px 0 5px -8px rgba(0, 0, 0, 0.54);
 	-moz-box-shadow: -15px 0 5px -8px rgba(0, 0, 0, 0.54);
 	box-shadow: -15px 0 5px -8px rgba(0, 0, 0, 0.54);
