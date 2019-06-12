@@ -59,3 +59,53 @@
 	padding: 0.5rem 1rem;
 	cursor: pointer;
 }
+
+.stages {
+	display: flex;
+}
+
+.refinements {
+	background-color: #2fa6ce;
+}
+
+.development {
+	background-color: #edd434;
+}
+
+.regression {
+	background-color: #f26c2e;
+}
+
+.refinements,
+.development,
+.regression {
+	flex-basis: 33.3%;
+	padding: 1rem;
+	border: 1px solid black;
+	position: relative;
+}
+
+.stages h4 {
+	margin-top: 0;
+	text-align: center;
+}
+
+.stages ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.stages li {
+	line-height: 1.5rem;
+}
+
+.arrow-right {
+	position: absolute;
+	top: 50%;
+	width: 0px;
+	height: 0px;
+	border-top: 60px solid transparent;
+	border-bottom: 60px solid transparent;
+	border-left: 60px solid green;
+}

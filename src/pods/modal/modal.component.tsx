@@ -18,8 +18,43 @@ export const Modal = (props: Props) => {
       <div className="modal-background">
         <div className="modal">
           <h2>{`${props.jobTitle} at ${props.companyName}`}</h2>
-          <p>Hear me roar.</p>
-          <span>{props.jobId}</span>
+          <p>
+            As a member of an Agile department working with Safe methodology, we
+            work within iterations where the following stages are repeated:
+          </p>
+          <div className="stages">
+            <section className="refinements">
+              <h4>Refinements</h4>
+              <ul>
+                <li>Backlog items refinement</li>
+                <li>Analyze business impact</li>
+                <li>Analyze technical debt</li>
+                <li>User stories definition</li>
+                <li>Define features to cover with Acceptance Tests</li>
+                <li>Sprint planning</li>
+              </ul>
+              {/* <div className="arrow-right" /> */}
+            </section>
+            <section className="development">
+              <h4>Development</h4>
+              <ul>
+                <li>Daily meeting to synchroniza</li>
+                <li>Development of new features</li>
+                <li>Development of tests</li>
+                <li>Refinement of following sprints</li>
+                <li>Track SonarQube issues</li>
+                <li>Pull requests revisions</li>
+              </ul>
+            </section>
+            <section className="regression">
+              <h4>Regression</h4>
+              <ul>
+                <li>Stakeholders Demo</li>
+                <li>Team retrospective</li>
+                <li>BugFixing</li>
+              </ul>
+            </section>
+          </div>
           <div className="action-buttons">
             <button
               onClick={() => props.setOpenModal(false)}
