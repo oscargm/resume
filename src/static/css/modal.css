@@ -32,7 +32,7 @@
 .modal-background,
 .modal {
 	position: relative;
-	padding: 3rem;
+	padding: 2rem;
 	border: outset 3px black;
 }
 
@@ -49,7 +49,7 @@
 .action-buttons {
 	position: absolute;
 	width: 100%;
-	bottom: 3rem;
+	bottom: 2rem;
 }
 
 .closeButton {

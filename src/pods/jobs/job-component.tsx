@@ -16,9 +16,10 @@ interface JobProps {
 export const Job = (props: JobProps) => {
   const [modalOpen, setModalOpen] = React.useState(false)
   const { jobTitle, jobId, companyName, jobDates, jobDuties, techStack } = props
-  React.useEffect(() => {
-    console.log(jobId, modalOpen)
-  })
+  const handleKeys = e => {
+    e.keyCode === 27 && modalOpen && setModalOpen(!modalOpen)
+  }
+  window.addEventListener('keydown', handleKeys)
   return (
     <>
       <div className={'job-wrapper'}>
@@ -28,7 +29,7 @@ export const Job = (props: JobProps) => {
               <h2>{jobTitle}</h2>
               <button
                 className={'open-details-button'}
-                onClick={() => setModalOpen(!modalOpen)}
+                onClick={() => !modalOpen && setModalOpen(!modalOpen)}
               >
                 Details
               </button>
@@ -50,7 +51,13 @@ export const Job = (props: JobProps) => {
           </div>
         </div>
       </div>
-      <Modal jobId={jobId} open={modalOpen} setOpenModal={setModalOpen} />
+      <Modal
+        jobId={jobId}
+        companyName={companyName}
+        jobTitle={jobTitle}
+        open={modalOpen}
+        setOpenModal={setModalOpen}
+      />
     </>
   )
 }
