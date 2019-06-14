@@ -9,11 +9,6 @@
 	transition: opacity 0.2s linear, visibility 0s linear;
 	opacity: 1;
 	visibility: visible;
-	/* display: block; */
-	/* animation: fadeIn;
-    animation-delay: 0.1s;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards; */
 }
 
 .modal-wrapper,
@@ -42,6 +37,13 @@
 	overflow: hidden;
 }
 
+.modal-intro,
+.modal-final {
+	width: 80%;
+	margin: 0 auto;
+	padding: 1rem 0;
+}
+
 .modal h2,
 .action-buttons {
 	text-align: center;
@@ -63,7 +65,7 @@
 
 .stages {
 	display: flex;
-	height: 100%;
+	height: max-content;
 }
 
 .refinements,
@@ -81,36 +83,20 @@
 	background-color: #f26c2e;
 }
 
-.stages > section:hover {
-	margin: 15px 0 0 15px;
-	-webkit-box-shadow: -15px -15px 5px -8px rgba(0, 0, 0, 0.54);
-	-moz-box-shadow: -15px -15px 5px -8px rgba(0, 0, 0, 0.54);
-	box-shadow: -15px -15px 5px -8px rgba(0, 0, 0, 0.54);
-}
-
-.stages > section:hover > .task-list {
-	transition: opacity 0.1s linear, visibility 0s linear;
-	opacity: 1;
-	visibility: visible;
-}
-
 .stages > section {
 	flex-basis: 33.3%;
 	padding: 1rem 0;
-	border: 1px solid black;
 	position: relative;
-	height: 3rem;
 }
 
 .stages h4 {
-	margin: 0 0 1rem 0;
+	margin: 0;
 	text-align: center;
 }
 
 .stages ul {
 	margin: 0;
-	padding: 0;
-	list-style-type: ;
+	padding: 0 0 0 1rem;
 }
 
 .stages li {
@@ -137,11 +123,6 @@
 }
 
 .task-list {
-	opacity: 0;
-	visibility: hidden;
-	padding: 2rem 1rem;
-	border-top: 1px solid black;
-	-webkit-box-shadow: -15px 0 5px -8px rgba(0, 0, 0, 0.54);
-	-moz-box-shadow: -15px 0 5px -8px rgba(0, 0, 0, 0.54);
-	box-shadow: -15px 0 5px -8px rgba(0, 0, 0, 0.54);
+	padding: 1rem 1rem;
+	height: 100%;
 }
